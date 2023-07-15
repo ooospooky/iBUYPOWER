@@ -38,12 +38,6 @@ const SliderComponent = () => {
       <Slider {...settings} ref={sliderRef}>
         {products.map((product) => (
           <Card product={product} />
-          // <div key={product.id}>
-          //   <img src={product.img} alt={product.title} className="w-full h-auto" />
-          //   <h3>{product.title}</h3>
-          //   <p>{product.description}</p>
-          //   <button>{product.type === 'prebuilt' ? 'Buy Now' : 'Customize'}</button>
-          // </div>
         ))}
       </Slider>
     </div>
