@@ -5,14 +5,14 @@ import { products } from './products';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick.css";
 const SliderComponent = () => {
-  const sliderRef = useRef<Slider | null>(null);
+  const sliderRef = useRef<Slider | null>(null); //用來調用prev, next按鈕
   const [itemsToShow, setItemsToShow] = useState(window.innerWidth >= 768 ? 4 : 1)
   useEffect(() => {
     const handleResize = () => {
       setItemsToShow(window.innerWidth >= 768 ? 4 : 1);
     };
-    window.addEventListener('resize', handleResize);
-    return () => {
+    window.addEventListener('resize', handleResize);  //視窗大小變更時執行handleResize，使不用reload就可以改變itemToShow的value
+    return () => {  //clean up func, prevent resource lick 
       window.removeEventListener('resize', handleResize);
     };
   }, []);
@@ -24,10 +24,10 @@ const SliderComponent = () => {
   };
 
   const settings = {
-    dots: false,
-    infinite: false,
-    slidesToShow: itemsToShow,
-    slidesToScroll: itemsToShow,
+    dots: false, //不顯示slider下方的dot
+    infinite: false, //disables infinite loop behavior of the slider
+    slidesToShow: itemsToShow, //一次顯示幾筆資料
+    slidesToScroll: itemsToShow, //一次滑動滑幾筆資料
   };
 
   return (
