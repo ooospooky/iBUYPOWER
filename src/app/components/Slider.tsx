@@ -2,8 +2,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Slider from "react-slick";
 import { products } from './products';
+import { Card } from './Card';
 import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 const SliderComponent = () => {
   const sliderRef = useRef<Slider | null>(null); //用來調用prev, next按鈕
   const [itemsToShow, setItemsToShow] = useState(window.innerWidth >= 768 ? 4 : 1)
@@ -36,12 +37,13 @@ const SliderComponent = () => {
       <button onClick={handleNext}>handleNext</button>
       <Slider {...settings} ref={sliderRef}>
         {products.map((product) => (
-          <div key={product.id}>
-            <img src={product.img} alt={product.title} className="w-full h-auto" />
-            <h3>{product.title}</h3>
-            <p>{product.description}</p>
-            <button>{product.type === 'prebuilt' ? 'Buy Now' : 'Customize'}</button>
-          </div>
+          <Card product={product} />
+          // <div key={product.id}>
+          //   <img src={product.img} alt={product.title} className="w-full h-auto" />
+          //   <h3>{product.title}</h3>
+          //   <p>{product.description}</p>
+          //   <button>{product.type === 'prebuilt' ? 'Buy Now' : 'Customize'}</button>
+          // </div>
         ))}
       </Slider>
     </div>
