@@ -7,7 +7,7 @@ interface CardProps {
 export const Card: React.FC<CardProps> = ({ product }) => {
   const { id, type, img, title, description, save, OriginalPrice, DiscountedPrice, affiram, shipping } = product
   return (
-    <div key={id} className='flex flex-col rounded-[10px] bg-white mx-3 shadow-2xl my-20' h-full  >
+    <div key={id} className='flex flex-col rounded-[10px] bg-white mx-3 shadow-2xl my-20 px-5 py-5' h-full  >
       <section>
         <div className='flex justify-center'>
           <img src={img} alt={title} className="w-52 h-52 " />
@@ -17,7 +17,7 @@ export const Card: React.FC<CardProps> = ({ product }) => {
           <div className='flex flex-col gap-1'>
             {description.map((des) => {
               return (
-                <p className='text-base font-normal text-left'>{des}</p>
+                <p className='text-base font-normal text-left tracking-normal'>{des}</p>
               )
             })}
           </div>
@@ -35,11 +35,11 @@ export const Card: React.FC<CardProps> = ({ product }) => {
           <p className='text-sm tracking-normal mt-1'>Starting at <span className='text-[#004CFF]'>${affiram}</span> with</p>
         </div>
         <div className='mt-5 flex flex-row justify-between'>
-          <div className='flex flex-col'>
+          <div className='flex flex-col gap-2'>
             <span className="text-xs font-bold">Free Shipping</span>
-            <span className="overflow-hidden text-ellipsis whitespace-nowrap text-xs">{shipping}</span>
+            <span className="overflow-hidden whitespace-nowrap text-xs">{shipping}</span>
           </div>
-          <div className='rounded-[30px] px-10 py-[0.5rem] border-2 border-red-600   text-red-600'>{type === 'prebuilt' ? 'Buy Now' : 'Customize'}</div>
+          <div className='rounded-[30px] px-6 py-[0.5rem] border-2 border-red-600   text-red-600 tracking-[-0.24px]'>{type === 'prebuilt' ? 'Buy Now' : 'Customize'}</div>
         </div>
       </section>
     </div>
