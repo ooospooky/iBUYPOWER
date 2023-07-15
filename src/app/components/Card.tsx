@@ -23,13 +23,24 @@ export const Card: React.FC<CardProps> = ({ product }) => {
           </div>
         </div>
       </section>
-      <section className="flex flex-col ">
+      <section className="flex flex-col mt-2 ">
         <div>
-          <div className='w-fit p-2 rounded-[20px]  bg-[#FF1B1B] pt-5 '>
-            <p className='text-white text-xs font-light'>SAVE ${save}</p>
+          <div className='w-fit p-2 rounded-[20px]  bg-[#FF1B1B]  '>
+            <p className='text-white text-s font-light'>SAVE ${save}</p>
           </div>
+          <div className='mt-3 flex flex-row gap-4'>
+            <p className='text-3xl font-bold self-end'>${DiscountedPrice}</p>
+            <p className='text-base font-normal self-end line-through  tracking-normal text-gray-600'>${OriginalPrice}</p>
+          </div>
+          <p className='text-sm tracking-normal mt-1'>Starting at <span className='text-[#004CFF]'>${affiram}</span> with</p>
         </div>
-        <button>{type === 'prebuilt' ? 'Buy Now' : 'Customize'}</button>
+        <div className='mt-5 flex flex-row justify-between'>
+          <div className='flex flex-col'>
+            <span className="text-xs font-bold">Free Shipping</span>
+            <span className="overflow-hidden text-ellipsis whitespace-nowrap text-xs">{shipping}</span>
+          </div>
+          <div className='rounded-[30px] px-10 py-[0.5rem] border-2 border-red-600   text-red-600'>{type === 'prebuilt' ? 'Buy Now' : 'Customize'}</div>
+        </div>
       </section>
     </div>
   )
