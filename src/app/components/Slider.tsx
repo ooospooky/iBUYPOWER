@@ -6,10 +6,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick.css";
 const SliderComponent = () => {
   const sliderRef = useRef<Slider | null>(null);
-  const [itemsToShow, setItemToShow] = useState(window.innerWidth >= 768 ? 4 : 1)
+  const [itemsToShow, setItemsToShow] = useState(window.innerWidth >= 768 ? 4 : 1)
   useEffect(() => {
     const handleResize = () => {
-      setItemToShow(window.innerWidth >= 768 ? 4 : 1);
+      setItemsToShow(window.innerWidth >= 768 ? 4 : 1);
     };
     window.addEventListener('resize', handleResize);
     return () => {
