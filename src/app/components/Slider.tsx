@@ -17,10 +17,11 @@ const SliderComponent = () => {
   };
   const sliderRef = useRef<Slider | null>(null); //用來調用prev, next按鈕
   const [itemsToShow, setItemsToShow] = useState(getItemsToShow)
-  const [itemsToScroll, setItemsToScroll] = useState(window.innerHeight >= 1200 ? 4 : 1)
+  const [itemsToScroll, setItemsToScroll] = useState(window.innerWidth >= 1200 ? 4 : 1)
   useEffect(() => {
     const handleResize = () => {
       setItemsToShow(getItemsToShow());
+      setItemsToScroll(window.innerWidth >= 1200 ? 4 : 1)
     };
     window.addEventListener('resize', handleResize);  //視窗大小變更時執行handleResize，使不用reload就可以改變itemToShow的value
     return () => {  //clean up func, prevent resource lick 
@@ -43,8 +44,10 @@ const SliderComponent = () => {
 
   return (
     <div id="container" className="">
-      <button onClick={handlePrev}>handlePrev</button>
-      <button onClick={handleNext}>handleNext</button>
+      <div className="flex justify-end mr-4 -mb-16 z-10 relative" >
+        <button onClick={handlePrev} className='text-4xl shadow-md border-2 px-2 py-1 '>&lt;</button>
+        <button onClick={handleNext} className='text-4xl shadow-md border-2 px-2 py-1'>&gt;</button>
+      </div>
       <Slider {...settings} ref={sliderRef}>
         {products.map((product) => (
           <Card product={product} />
