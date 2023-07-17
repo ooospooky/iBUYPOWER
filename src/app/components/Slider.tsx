@@ -11,18 +11,20 @@ const SliderComponent = () => {
     { width: 900, itemsToShow: 3 },
     { width: 640, itemsToShow: 2 },
   ];
-  const getItemsToShow = () => {
-    const { itemsToShow } = breakpoints.find((breakpoint) => window.innerWidth >= breakpoint.width) || {};
-    return itemsToShow || 1;
-  };
+
   const sliderRef = useRef<Slider | null>(null); //用來調用prev, next按鈕
-  const [itemsToShow, setItemsToShow] = useState(getItemsToShow)
+  const [itemsToShow, setItemsToShow] = useState(4)
   const [itemsToScroll, setItemsToScroll] = useState(window.innerWidth >= 1200 ? 4 : 1)
   useEffect(() => {
+    const getItemsToShow = () => {
+      const { itemsToShow } = breakpoints.find((breakpoint) => window.innerWidth >= breakpoint.width) || {};
+      return itemsToShow || 1;
+    };
     const handleResize = () => {
       setItemsToShow(getItemsToShow());
       setItemsToScroll(window.innerWidth >= 1200 ? 4 : 1)
     };
+    handleResize(); // 初始化設定 itemsToShow 的值
     window.addEventListener('resize', handleResize);  //視窗大小變更時執行handleResize，使不用reload就可以改變itemToShow的value
     return () => {  //clean up func, prevent resource lick 
       window.removeEventListener('resize', handleResize);
