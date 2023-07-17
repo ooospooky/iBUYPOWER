@@ -44,7 +44,7 @@ const SliderComponent = () => {
 
   return (
     <div id="container" className="">
-      <div className="flex justify-end mr-4 -mb-16 z-10 relative" >
+      <div className="flex justify-end mr-4 -mb-16 z-10 relative llg:hidden" >
         <button onClick={handlePrev} className='text-4xl shadow-md border-2 px-2 py-1 '>&lt;</button>
         <button onClick={handleNext} className='text-4xl shadow-md border-2 px-2 py-1'>&gt;</button>
       </div>
