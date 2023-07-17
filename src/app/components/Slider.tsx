@@ -6,11 +6,21 @@ import { Card } from './Card';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 const SliderComponent = () => {
+  const breakpoints = [
+    { width: 1200, itemsToShow: 4 },
+    { width: 900, itemsToShow: 3 },
+    { width: 640, itemsToShow: 2 },
+  ];
+  const getItemsToShow = () => {
+    const { itemsToShow } = breakpoints.find((breakpoint) => window.innerWidth >= breakpoint.width) || {};
+    return itemsToShow || 1;
+  };
   const sliderRef = useRef<Slider | null>(null); //用來調用prev, next按鈕
-  const [itemsToShow, setItemsToShow] = useState(window.innerWidth >= 768 ? 4 : 1)
+  const [itemsToShow, setItemsToShow] = useState(getItemsToShow)
+  const [itemsToScroll, setItemsToScroll] = useState(window.innerHeight >= 1200 ? 4 : 1)
   useEffect(() => {
     const handleResize = () => {
-      setItemsToShow(window.innerWidth >= 768 ? 4 : 1);
+      setItemsToShow(getItemsToShow());
     };
     window.addEventListener('resize', handleResize);  //視窗大小變更時執行handleResize，使不用reload就可以改變itemToShow的value
     return () => {  //clean up func, prevent resource lick 
@@ -28,11 +38,11 @@ const SliderComponent = () => {
     dots: false, //不顯示slider下方的dot
     infinite: false, //disables infinite loop behavior of the slider
     slidesToShow: itemsToShow, //一次顯示幾筆資料
-    slidesToScroll: itemsToShow, //一次滑動滑幾筆資料
+    slidesToScroll: itemsToScroll, //一次滑動滑幾筆資料
   };
 
   return (
-    <div id="container">
+    <div id="container" className="">
       <button onClick={handlePrev}>handlePrev</button>
       <button onClick={handleNext}>handleNext</button>
       <Slider {...settings} ref={sliderRef}>
