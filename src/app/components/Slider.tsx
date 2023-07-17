@@ -17,7 +17,7 @@ const SliderComponent = () => {
   const [itemsToScroll, setItemsToScroll] = useState(window.innerWidth >= 1200 ? 4 : 1)
   useEffect(() => {
     const getItemsToShow = () => {
-      const { itemsToShow } = breakpoints.find((breakpoint) => window.innerWidth >= breakpoint.width) || {};
+      const { itemsToShow } = breakpoints.find(({ width }) => window.innerWidth >= width) || {};
       return itemsToShow || 1;
     };
     const handleResize = () => {
