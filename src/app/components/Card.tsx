@@ -16,9 +16,9 @@ export const Card: React.FC<CardProps> = ({ product }) => {
         <div className='flex flex-col '>
           <h3 className='font-bold text-xl my-5 overflow-hidden whitespace-nowrap overflow-ellipsis'>{title}</h3>
           <div className='flex flex-col gap-1'>
-            {description.map((des) => {
+            {description.map((eachDescription, index) => {
               return (
-                <p className='text-base font-normal text-left tracking-normal overflow-hidden whitespace-nowrap overflow-ellipsis'>{des}</p>
+                <p key={index} className='text-base font-normal text-left tracking-normal overflow-hidden whitespace-nowrap overflow-ellipsis'>{eachDescription}</p>
               )
             })}
           </div>
