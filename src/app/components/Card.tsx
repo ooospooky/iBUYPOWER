@@ -7,8 +7,9 @@ interface CardProps {
 export const Card: React.FC<CardProps> = ({ product }) => {
   const { id, type, img, title, description, save, OriginalPrice, DiscountedPrice, affiram, shipping } = product
   return (
-    <div key={id} className='flex flex-col rounded-[10px] bg-white mx-3 shadow-2xl my-20  py-5' h-full  >
+    <div key={id} className='flex flex-col rounded-[10px] bg-white mx-3 shadow-2xl my-20  ' h-full  >
       <section className='px-5'>
+        <p className='p-1 border-2 rounded-[30px] border-[#929292] w-fit text-xs text-[#929292]'>{type === 'prebuilt' ? 'Prebuilt PC' : 'Custom PC'}</p>
         <div className='flex justify-center'>
           <img src={img} alt={title} className="w-52 h-52 " />
         </div>
@@ -34,7 +35,7 @@ export const Card: React.FC<CardProps> = ({ product }) => {
           </div>
           <p className='text-sm tracking-normal mt-1 flex items-end'>
             Starting at
-            <span className='text-[#004CFF]'>${affiram}</span> with
+            <span className='text-[#004CFF]'>&thinsp;${affiram}&thinsp;</span> with
             <img src='/icon-affirm.svg' alt='Affirm' className=' w-18 h-10 self-end -mb-[7px]' />
           </p>
         </div>
