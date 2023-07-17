@@ -9,7 +9,7 @@ const SliderComponent = () => {
   const breakpoints = [
     { width: 1200, itemsToShow: 4 },
     { width: 900, itemsToShow: 3 },
-    { width: 639, itemsToShow: 2 },
+    { width: 640, itemsToShow: 2 },
   ];
   const getItemsToShow = () => {
     const { itemsToShow } = breakpoints.find((breakpoint) => window.innerWidth >= breakpoint.width) || {};
