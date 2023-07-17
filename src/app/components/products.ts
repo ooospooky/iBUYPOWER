@@ -1,15 +1,4 @@
-export interface IProduct {
-  id: number;
-  type: "prebuilt" | "customize";
-  img: string;
-  title: string;
-  description: string[];
-  save: string;
-  OriginalPrice: string;
-  DiscountedPrice: string;
-  affiram: string;
-  shipping: string;
-}
+import { IProduct } from "../interface/interface";
 
 export const products: IProduct[] = [
   {
