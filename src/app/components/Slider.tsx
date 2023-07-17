@@ -40,6 +40,7 @@ const SliderComponent = () => {
     infinite: false, //disables infinite loop behavior of the slider
     slidesToShow: itemsToShow, //一次顯示幾筆資料
     slidesToScroll: itemsToScroll, //一次滑動滑幾筆資料
+
   };
 
   return (
@@ -51,7 +52,7 @@ const SliderComponent = () => {
       </div>
       <Slider {...settings} ref={sliderRef}>
         {products.map((product) => (
-          <Card product={product} />
+          <Card product={product} key={product.id} />
         ))}
       </Slider>
     </div>
