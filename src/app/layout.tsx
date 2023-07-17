@@ -6,7 +6,7 @@ import type { Metadata } from 'next'
 // const gotham = Gotham({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'iBUYPOWER',
-  description: 'PCs and PC Builder',
+  description: 'PCs and PC Builder ',
 }
 
 export default function RootLayout({
