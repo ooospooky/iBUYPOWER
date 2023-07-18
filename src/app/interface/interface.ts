@@ -39,3 +39,10 @@ export interface CardShippingProps {
 export interface CardButtonProps {
   type: string;
 }
+
+
+export interface SliderBtnProps {
+  itemsToShow: number;
+  handleNext: () => void;
+  handlePrev: () => void;
+}
