@@ -4,7 +4,7 @@ export const products: IProduct[] = [
   {
     id: 1,
     type: "prebuilt",
-    img: "/pc/jpgCreatorRDYY40BG201.jpg",
+    img: "/pc/CreatorRDYY40BG201.webp",
     title: "Creator RDY Y40BG201",
     description: [
       "Windows 11 Pro",
