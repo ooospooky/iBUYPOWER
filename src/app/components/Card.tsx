@@ -41,7 +41,7 @@ const CardDescription: React.FC<CardDescriptionProps> = ({ title, description })
 const CardPrice: React.FC<CardPriceProps> = ({ save, DiscountedPrice, OriginalPrice, affiram }) => {
   return (
     <div>
-      <div className="w-fit p-1 rounded-[20px] bg-[#FF1B1B]">
+      <div className="w-fit py-1 px-2 rounded-[20px] bg-[#FF1B1B]">
         <p className="text-white text-xs font-light">SAVE ${save}</p>
       </div>
       <div className="mt-3 flex flex-row gap-4">
