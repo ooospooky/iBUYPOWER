@@ -78,13 +78,13 @@ export const Card: React.FC<CardProps> = ({ product }) => {
   const { id, type, img, title, description, save, OriginalPrice, DiscountedPrice, affiram, shipping } = product;
 
   return (
-    <div key={id} className="flex flex-col rounded-[10px] bg-white mx-3 shadow-2xl my-20 h-full sm:mx-14">
-      <section className="px-5 pt-2">
+    <div key={id} className="flex flex-col rounded-2xl mx-3 shadow-2xl my-20 h-full sm:mx-14">
+      <section className="px-5 pt-2   ">
         <CardHeader type={type} />
         <CardImage img={img} title={title} />
         <CardDescription title={title} description={description} />
       </section>
-      <section className="flex flex-col mt-2 bg-[#F2F6FA] p-5">
+      <section className="flex flex-col mt-2 bg-[#F2F6FA] p-5 rounded-b-2xl">
         <CardPrice
           save={save}
           DiscountedPrice={DiscountedPrice}
