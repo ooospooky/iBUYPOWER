@@ -15,7 +15,7 @@ const SliderComponent = () => {
 
   const sliderRef = useRef<Slider | null>(null); //用來調用prev, next按鈕
   const [itemsToShow, setItemsToShow] = useState(4)
-  const [itemsToScroll, setItemsToScroll] = useState(window.innerWidth >= 1200 ? 4 : 1)
+  const [itemsToScroll, setItemsToScroll] = useState(1)
   useEffect(() => {
 
     const getItemsToShow = () => {
@@ -24,8 +24,10 @@ const SliderComponent = () => {
     };
 
     const handleResize = () => {
-      setItemsToShow(getItemsToShow());
-      setItemsToScroll(window.innerWidth >= 1200 ? 4 : 1)
+      if (typeof window !== 'undefined') {
+        setItemsToShow(getItemsToShow());
+        setItemsToScroll(window.innerWidth >= 1200 ? 4 : 1)
+      }
     };
 
     handleResize(); // 初始化設定 itemsToShow 的值
