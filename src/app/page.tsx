@@ -1,12 +1,7 @@
 import Image from "next/image";
 import { products } from "./components/products";
 import SliderComponent from "./components/Slider";
-{/*  Font wight
- <p className="font-bold">bold 600</p>
-<p className="font-medium">medium 500</p>
-<p className="font-normal">normal 400</p>
-<p className="font-light">light 300</p> 
-*/}
+
 export default function Home() {
   return (
     <div className="w-full h-screen">
