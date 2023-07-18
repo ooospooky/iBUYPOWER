@@ -68,7 +68,7 @@ const CardShipping: React.FC<CardShippingProps> = ({ shipping }) => {
 };
 const CardButton: React.FC<CardButtonProps> = ({ type }) => {
   return (
-    <div className="rounded-[30px] px-2 py-2 border border-red-600 text-red-600 tracking-[-0.24px] text-sm -mr-2">
+    <div className="rounded-[30px] px-3 py-[6px] border border-red-600 text-red-600 tracking-[-0.24px] text-sm  flex justify-center items-center whitespace-nowrap">
       {type === 'prebuilt' ? 'Buy Now' : 'Customize'}
     </div>
   )
