@@ -4,7 +4,7 @@ export const products: IProduct[] = [
   {
     id: 1,
     type: "prebuilt",
-    img: "/pc/CreatorRDYY40BG201.webp",
+    img: "/gamingpc/CreatorRDYY40BG201.webp",
     title: "Creator RDY Y40BG201",
     description: [
       "Windows 11 Pro",
@@ -22,7 +22,7 @@ export const products: IProduct[] = [
   {
     id: 2,
     type: "prebuilt",
-    img: "/pc/GamingRDYSLMRG211.webp",
+    img: "/gamingpc/GamingRDYSLMRG211.webp",
     title: "Gaming RDY SLMRG211",
     description: [
       "Windows 11 Home",
@@ -40,7 +40,7 @@ export const products: IProduct[] = [
   {
     id: 3,
     type: "customize",
-    img: "/pc/IntelGamingPCDDR5Configurator3.webp",
+    img: "/gamingpc/IntelGamingPCDDR5Configurator3.webp",
     title: "Intel Gaming PC DDR5 Configurator 3",
     description: [
       "Windows 11 Home",
@@ -58,7 +58,7 @@ export const products: IProduct[] = [
   {
     id: 4,
     type: "customize",
-    img: "/pc/Intel13thGenExtremeGamingPC.webp",
+    img: "/gamingpc/Intel13thGenExtremeGamingPC.webp",
     title: "Intel 13th Gen Extreme Gaming PC",
     description: [
       "Windows 11 Home",
@@ -76,7 +76,7 @@ export const products: IProduct[] = [
   {
     id: 5,
     type: "prebuilt",
-    img: "/pc/GamingRDYSLHRG223.webp",
+    img: "/gamingpc/GamingRDYSLHRG223.webp",
     title: "Gaming RDY SLHRG223",
     description: [
       "Windows 11 Home",
@@ -94,7 +94,7 @@ export const products: IProduct[] = [
   {
     id: 6,
     type: "prebuilt",
-    img: "/pc/GamingRDYEMRRG213.webp",
+    img: "/gamingpc/GamingRDYEMRRG213.webp",
     title: "Gaming RDY EMRRG213",
     description: [
       "Windows 11 Home",
@@ -112,7 +112,7 @@ export const products: IProduct[] = [
   {
     id: 7,
     type: "customize",
-    img: "/pc/AMDRyzen9SupremeDailyDeal.webp",
+    img: "/gamingpc/AMDRyzen9SupremeDailyDeal.webp",
     title: "AMD Ryzen 9 Supreme Daily Deal",
     description: [
       "Windows 11 Home",
@@ -130,7 +130,7 @@ export const products: IProduct[] = [
   {
     id: 8,
     type: "customize",
-    img: "/pc/AMDGamingPCConfigurator1.webp",
+    img: "/gamingpc/AMDGamingPCConfigurator1.webp",
     title: "AMD Gaming PC Configurator 1",
     description: [
       "Windows 11 Home",
