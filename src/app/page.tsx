@@ -1,5 +1,3 @@
-import Image from "next/image";
-import { products } from "./components/products";
 import SliderComponent from "./components/Slider";
 
 export default function Home() {
