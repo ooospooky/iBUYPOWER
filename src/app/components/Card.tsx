@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image';
 import { CardProps, CardHeaderProps, CardImageProps, CardDescriptionProps, CardPriceProps, CardShippingProps, CardButtonProps } from '../interface/interface'
 
 const CardHeader: React.FC<CardHeaderProps> = ({ type }) => {
@@ -12,7 +13,7 @@ const CardHeader: React.FC<CardHeaderProps> = ({ type }) => {
 const CardImage: React.FC<CardImageProps> = ({ img, title }) => {
   return (
     <div className="flex justify-center">
-      <img src={img} alt={title} className="w-52 h-52" />
+      <Image src={img} alt={title} width={208} height={208} />
     </div>
   );
 };
