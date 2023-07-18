@@ -5,6 +5,7 @@ import { products } from './products';
 import { Card } from './Card';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { SliderBtn } from './SliderBtn';
 const SliderComponent = () => {
   const breakpoints = [
     { width: 1200, itemsToShow: 4 },
@@ -52,11 +53,7 @@ const SliderComponent = () => {
 
   return (
     <div id="container" className="">
-      {/* only when itemToShow ===4,  display button   */}
-      <div className={`flex justify-end gap-2 mr-4 -mb-16  z-10 relative  ${itemsToShow !== 4 && 'hidden'} `} >
-        <button onClick={handlePrev} className='text-4xl shadow-md border-2 px-3 py-1 hover:bg-[#3A3A3A] hover:text-white '>&lt;</button>
-        <button onClick={handleNext} className='text-4xl shadow-md border-2 px-3 py-1 hover:bg-[#3A3A3A] hover:text-white '>&gt;</button>
-      </div>
+      <SliderBtn itemsToShow={itemsToShow} handleNext={handleNext} handlePrev={handlePrev} />
       <Slider {...settings} ref={sliderRef}>
         {products.map((product) => (
           <Card product={product} key={product.id} />
