@@ -3,7 +3,7 @@ import { CardProps, CardHeaderProps, CardImageProps, CardDescriptionProps, CardP
 
 const CardHeader: React.FC<CardHeaderProps> = ({ type }) => {
   return (
-    <p className="p-1 border-2 rounded-[30px] border-[#929292] w-fit text-xs text-[#929292]">
+    <p className="px-2 py-1 border-2 rounded-[30px] border-[#929292] w-fit text-xs text-[#929292]">
       {type === 'prebuilt' ? 'Prebuilt PC' : 'Custom PC'}
     </p>
   );
